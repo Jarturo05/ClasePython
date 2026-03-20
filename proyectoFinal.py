@@ -110,6 +110,8 @@ Al terminar el programa debe mostrar:
 Total de estudiantes registrados: X
 Promedio general del grupo: X"""
 
+#Se crea las opciones a elegir en el menu
+
 menu = """
     Bienvenido al registro de estudiantes
 
@@ -121,6 +123,7 @@ print(menu)
 
 opcion = 0
 
+#Se crea la funcion registrar_estudiante que permite inicializar el codigo pidiendo datos del estudiante
 def registrar_estudiante():
     nombre = input("Ingrese el nombre del estudiante: ")
     while True:
@@ -149,10 +152,12 @@ def registrar_estudiante():
             break
     return nombre, edad, nota1, nota2, nota3
 
+#Se crea la funcion promedio que calcula dependiendo de las notas antes pedidas del estudiante
 def calcular_promedio(n1, n2, n3):
     promedio = (n1 + n2 + n3) / 3
     return promedio
 
+#Se crea la funcion estado que dependiendo del promedio del estudiante se imprime el estado
 def evaluar_estado(promedio):
     if promedio >= 4:
         return "Aprobado"
@@ -162,7 +167,9 @@ def evaluar_estado(promedio):
         return "Reprobado"
     else:
         return "Dato no valido"
-    
+
+#Se crea la funcion para mostrar en la opcion 2 del programa todos los estudiantes registrados hasta el momento.
+#Utilizando el ciclo for para iniciar la lista y ir mostrando los estudiantes antes guardados
 def mostrar_todos_los_estudiantes(lista_estudiantes):
     print("\n    Lista de Estudiantes     ")
 
@@ -176,6 +183,8 @@ contador = 0
 prom = 0
 estudiantes = []
 
+#Una vez creado los ciclos se inicia el programa en ciclo while para repetir el ciclo por si el usuario se equivoca o termina la accion en una opcion
+#Se inician el contador, prom y opcion en 0 para iniciar el ciclo y permitir que dependiendo de las vueltas se ejecuten las respecticas operaciones
 while True:
     opcion = int(input("Ingrese la opcion que desea: "))
     if opcion == 1:
@@ -187,7 +196,7 @@ while True:
         contador += 1
         print("--> Regresando al Menú")
         print(menu)
-
+#Se crea la lista estudiante para ir almacenando los datos de los estudiantes con un .append y ejecutar la funcion antes mencionada 
         estudiante = {
             "Nombre": nombre,
             "Edad": edad,
@@ -201,7 +210,8 @@ while True:
         mostrar_todos_los_estudiantes(estudiantes)
         print("\n ----> Regresando al menu ---->") 
         print(menu)
-
+#Se ejecuta la opcion salir sin antes mostrar el promedio que se basa en una suma del promedio del estudiante y el numero de veces que se ejecute el ciclo
+#Luego se divide el promedio y la cantidad de veces dandonos el promedio total de los estudiantes y al finalizar el numero de estudiantes registrados.
     elif opcion == 3:
         if contador > 1:
             print(f"El promedio de los estudiantes registrados es: {prom/contador:.2f}")
@@ -215,6 +225,6 @@ while True:
         print("Opcion invalida, digite nuevamente.")
         print(menu)
 
-
+#Fin del codigo
 
 
