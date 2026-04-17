@@ -1,5 +1,5 @@
 # Proyecto Final Modulo 2 Sistema de Gestion de Hospital Veterinario
-Nombre: Jhonatan Arturo Elnathan Carreño Priet
+Nombre: Jhonatan Arturo Elnathan Carreño Prieto
 
 En este proyecto se encuentran adjuntados 2 documentos
 1. El Codigo del Proyecto Final donde se uso programación Orientada a objetos (POO) 
